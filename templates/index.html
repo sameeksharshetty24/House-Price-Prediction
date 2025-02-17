@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex justify-center items-center h-full overflow-auto">
+
+    <div class="w-full max-w-xl bg-white p-8 rounded-lg shadow-lg max-h-screen overflow-y-auto">
+        <h1 class="text-3xl font-semibold text-center text-gray-700 mb-6">House Price Prediction</h1>
+
+        <!-- Prediction Form -->
+        <form action="/predict" method="POST">
+            <div class="space-y-4">
+                <div>
+                    <label for="bedrooms" class="block text-lg font-medium text-gray-700">Bedrooms</label>
+                    <input type="number" name="bedrooms" id="bedrooms" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="bathrooms" class="block text-lg font-medium text-gray-700">Bathrooms</label>
+                    <input type="number" name="bathrooms" id="bathrooms" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="sqft_living" class="block text-lg font-medium text-gray-700">Sqft Living</label>
+                    <input type="number" name="sqft_living" id="sqft_living" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="sqft_lot" class="block text-lg font-medium text-gray-700">Sqft Lot</label>
+                    <input type="number" name="sqft_lot" id="sqft_lot" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="floors" class="block text-lg font-medium text-gray-700">Floors</label>
+                    <input type="number" name="floors" id="floors" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="waterfront" class="block text-lg font-medium text-gray-700">Waterfront (0 or 1)</label>
+                    <input type="number" name="waterfront" id="waterfront" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="view" class="block text-lg font-medium text-gray-700">View (0-4)</label>
+                    <input type="number" name="view" id="view" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="condition" class="block text-lg font-medium text-gray-700">Condition (1-5)</label>
+                    <input type="number" name="condition" id="condition" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="sqft_above" class="block text-lg font-medium text-gray-700">Sqft Above</label>
+                    <input type="number" name="sqft_above" id="sqft_above" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="sqft_basement" class="block text-lg font-medium text-gray-700">Sqft Basement</label>
+                    <input type="number" name="sqft_basement" id="sqft_basement" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="yr_built" class="block text-lg font-medium text-gray-700">Year Built</label>
+                    <input type="number" name="yr_built" id="yr_built" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="yr_renovated" class="block text-lg font-medium text-gray-700">Year Renovated</label>
+                    <input type="number" name="yr_renovated" id="yr_renovated" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                
+                <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Predict Price</button>
+            </div>
+        </form>
+
+        <!-- Prediction Result -->
+        <div class="mt-6">
+            {% if prediction_text %}
+                <h3 class="text-xl font-medium text-green-600">{{ prediction_text }}</h3>
+            {% endif %}
+        </div>
+    </div>
+
+</body>
+</html>
