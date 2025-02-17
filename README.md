@@ -50,7 +50,7 @@ Ensure you have Python installed on your machine.
 
 ### Steps
 
-1. Clone the repository:
+1.Clone the repository:
 ```bash
    git clone https://github.com/sameeksharshetty24/House-Price-Prediction.git
 ```
