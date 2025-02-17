@@ -51,10 +51,11 @@ Ensure you have Python installed on your machine.
 ### Steps
 
 1. Clone the repository:
-   ```bash
+```bash
    git clone https://github.com/sameeksharshetty24/House-Price-Prediction.git
+```
 2.Navigate to the project directory:
-  ```bash
+```bash
   cd House-Price-Prediction
 ```
 3.Create a virtual environment (optional but recommended):
